@@ -74,14 +74,18 @@ public class PlayListApplication {
 				for (int i = 1; i < songCollection.size(); i++) {
 					System.out.println("Playing song " + songCollection.get(i));
 					System.out.println("3: Previous , 4: Next");
-					Thread.sleep(50);
+					Thread.sleep(3000); // For now using thread for song time to be played
+
 					choice = scan.nextInt();
+					
 					if(choice == 3){//Previous
 						System.out.println("Playing next song "+ songCollection.get(i-1).getTitle());
 					}
 					else if(choice == 4){//Next
 						System.out.println("Playing previous song "+songCollection.get(i+1).getTitle());
 					}
+					else
+						continue;
 				}
 				System.out.println("Completed playing songs without repeating...!!");
 			}
